@@ -11,10 +11,21 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
+    var coordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        return true
+        // 1. Cria a window
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = window
+        
+        // 2. Cria o DI Container
+        let diContainer = AppDIContainer()
+
+        coordinator = AppCoordinator(window: window, diContainer: diContainer)
+        coordinator?.start()
         return true
     }
 

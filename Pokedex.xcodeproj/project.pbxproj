@@ -6,6 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		54F79FBB2E8C8204003CF219 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 54F79FBA2E8C8204003CF219 /* Alamofire */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		54EE075F2E8C7CEC00BA548C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		54EE06DE2E8AFC5B00BA548C /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54F79FBB2E8C8204003CF219 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				54EE06E02E8AFC5B00BA548C /* Pokedex */,
+				54EE07602E8C7D1400BA548C /* Frameworks */,
 				54EE06DF2E8AFC5B00BA548C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,6 +77,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		54EE07602E8C7D1400BA548C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -68,6 +94,7 @@
 				54EE06DA2E8AFC5B00BA548C /* Sources */,
 				54EE06DB2E8AFC5B00BA548C /* Frameworks */,
 				54EE06DC2E8AFC5B00BA548C /* Resources */,
+				54EE075F2E8C7CEC00BA548C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -78,6 +105,7 @@
 			);
 			name = Pokedex;
 			packageProductDependencies = (
+				54F79FBA2E8C8204003CF219 /* Alamofire */,
 			);
 			productName = Pokedex;
 			productReference = 54EE06DE2E8AFC5B00BA548C /* Pokedex.app */;
@@ -107,6 +135,9 @@
 			);
 			mainGroup = 54EE06D52E8AFC5B00BA548C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				54F79FB92E8C8204003CF219 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 54EE06DF2E8AFC5B00BA548C /* Products */;
 			projectDirPath = "";
@@ -337,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		54F79FB92E8C8204003CF219 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		54F79FBA2E8C8204003CF219 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54F79FB92E8C8204003CF219 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 54EE06D62E8AFC5B00BA548C /* Project object */;
 }
