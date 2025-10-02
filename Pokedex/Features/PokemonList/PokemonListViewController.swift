@@ -9,13 +9,15 @@ import UIKit
 
 final class PokemonListViewController: UIViewController {
     
-    private let viewModel: PokemonListViewModel
+    @IBOutlet weak var tableview: UITableView!
+    
+    private var viewModel: PokemonListViewModel
     
     private var pokemons: [PokemonDetail] = []
     private var isFetching = false
     private let pageSize = 20
     
-    @IBOutlet weak var tableview: UITableView!
+    var onPokemonSelected: ((PokemonDetail, UIImage) -> Void)?
     
     init(viewModel: PokemonListViewModel) {
         self.viewModel = viewModel
@@ -45,6 +47,10 @@ final class PokemonListViewController: UIViewController {
         tableview.dataSource = self
     }
     
+    func inject(viewModel: PokemonListViewModel) {
+        self.viewModel = viewModel
+    }
+    
     private func bindViewModel() {
         viewModel.onPokemonsFetched = { [weak self] pokemons in
             guard let self else { return }
@@ -61,6 +67,8 @@ final class PokemonListViewController: UIViewController {
     }
 }
 
+//MARK: - Tableviews delegates
+
 extension PokemonListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         pokemons.count
@@ -76,7 +84,13 @@ extension PokemonListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableview.deselectRow(at: indexPath, animated: true)
+        let selectedPokemon = pokemons[indexPath.row]
+        let cell = tableView.cellForRow(at: indexPath) as? PokemonCell
+        guard let image = cell?.pokemonImage.image ?? UIImage(systemName: "multiply.circle") else {
+            return
+        }
+        onPokemonSelected?(selectedPokemon, image)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
