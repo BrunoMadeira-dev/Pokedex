@@ -11,6 +11,8 @@ import UIKit
 final class AppDIContainer {
 // MARK: - Core services
     
+    static let shared = AppDIContainer()
+    
     lazy var apiClient: NetworkingCall = {
         return NetworkingCall()
     }()

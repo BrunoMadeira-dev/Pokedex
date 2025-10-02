@@ -9,5 +9,5 @@ import Foundation
 
 
 protocol PokemonRepository {
-    func getPokemonList(page: Int) async throws -> [Pokemon]
+    func getPokemonList(offset: Int,limit: Int) async throws -> [Pokemon]
 }

@@ -8,8 +8,6 @@
 import Foundation
 
 class PokemonRepositoryImpl: PokemonRepository {
-    
-   // private let repository: PokemonRepository
     @Published var pokemons: [Pokemon] = []
     
     private let apiClient: NetworkingCall
@@ -18,17 +16,13 @@ class PokemonRepositoryImpl: PokemonRepository {
         self.apiClient = apiClient
     }
     
-    func getPokemonList(page: Int) async throws -> [Pokemon] {
-            let limit = 20
-            let offset = (page - 1) * limit
-            let url = "https://pokeapi.co/api/v2/pokemon?limit=\(limit)&offset=\(offset)"
-            
-            // Chamada async/await correta
-            let response: PokemonListResponse = try await apiClient.responseCall(
-                url: url,
-                responseType: PokemonListResponse.self
-            )
-            
-           return response.results
-        }
+    func getPokemonList(offset: Int = 0,limit: Int = 20) async throws -> [Pokemon] {
+
+        let url = "https://pokeapi.co/api/v2/pokemon?limit=\(limit)&offset=\(offset)"
+        let response: PokemonListResponse = try await apiClient.responseCall(
+            url: url,
+            responseType: PokemonListResponse.self
+        )
+        return response.results
+    }
 }

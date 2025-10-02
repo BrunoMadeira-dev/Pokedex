@@ -21,8 +21,16 @@ final class PokemonListCoordinator: Coordinator {
         }
     
     func start() {
-        let viewModel = PokemonListViewModel(repository: diContainer.pokemonRepository)
-        let vc = PokemonListViewController(viewModel: viewModel)
+        
+        let storyboard = UIStoryboard(name: "PokemonListViewController", bundle: nil) // o nome do .storyboard sem extensão
+        guard let vc = storyboard.instantiateViewController(
+            withIdentifier: "PokemonListViewController"
+        ) as? PokemonListViewController else {
+            fatalError("PokemonListViewController não encontrado no storyboard")
+        }
+//        let viewModel = PokemonListViewModel(repository: diContainer.pokemonRepository)
+//        let vc = PokemonListViewController(viewModel: viewModel)
+        vc.title = "Pokemons"
         navigationController.pushViewController(vc, animated: false)
     }
 }
