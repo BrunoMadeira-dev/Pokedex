@@ -10,4 +10,5 @@ import Foundation
 
 protocol PokemonRepository {
     func getPokemonList(offset: Int,limit: Int) async throws -> [Pokemon]
+    func getPokemonListWithDetails(offset: Int, limit: Int) async throws -> [PokemonDetail]
 }

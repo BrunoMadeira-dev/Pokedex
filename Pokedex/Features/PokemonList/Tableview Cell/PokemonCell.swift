@@ -18,4 +18,24 @@ class PokemonCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    func configure(with pokemon: PokemonDetail) {
+        pokemonLbl.text = pokemon.name.capitalized
+
+        if let urlString = pokemon.sprites.front_default,
+           let url = URL(string: urlString) {
+            loadImage(from: url)
+        }
+    }
+    
+    private func loadImage(from url: URL) {
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            if let data = data,
+               let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.pokemonImage.image = image
+                }
+            }
+        }.resume()
+    }
 }

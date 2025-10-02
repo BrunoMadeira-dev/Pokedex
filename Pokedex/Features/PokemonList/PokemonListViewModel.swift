@@ -8,9 +8,9 @@
 import Foundation
 
 class PokemonListViewModel {
-    var pokemons: [Pokemon] = []
+    var pokemons: [PokemonDetail] = []
 
-    var onPokemonsFetched: (([Pokemon]) -> Void)?
+    var onPokemonsFetched: (([PokemonDetail]) -> Void)?
     private let repository: PokemonRepository
     
     init(repository: PokemonRepository) {
@@ -20,7 +20,7 @@ class PokemonListViewModel {
     @MainActor
     func fetchPokemons(offset: Int, limit: Int) async {
         do {
-            let result = try await repository.getPokemonList(offset: offset, limit: limit)
+            let result = try await repository.getPokemonListWithDetails(offset: offset, limit: limit)
             if offset == 0 {
                 pokemons = result
             } else {

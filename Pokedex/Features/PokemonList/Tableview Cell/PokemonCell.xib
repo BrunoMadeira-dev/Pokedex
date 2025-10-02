@@ -23,17 +23,17 @@
                                 <rect key="frame" x="10" y="10" width="315" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YouAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="jt3-MM-Qnt">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="36"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="EJb-VS-QuU"/>
-                                            <constraint firstAttribute="height" constant="50" id="p2K-Ng-iAa"/>
+                                            <constraint firstAttribute="width" constant="70" id="EJb-VS-QuU"/>
+                                            <constraint firstAttribute="height" constant="70" id="p2K-Ng-iAa"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bC5-Os-mVE">
-                                        <rect key="frame" x="70" y="0.0" width="245" height="50"/>
+                                        <rect key="frame" x="90" y="0.0" width="225" height="50"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lw7-6X-TYe">
-                                                <rect key="frame" x="10" y="10" width="225" height="30"/>
+                                                <rect key="frame" x="10" y="10" width="205" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

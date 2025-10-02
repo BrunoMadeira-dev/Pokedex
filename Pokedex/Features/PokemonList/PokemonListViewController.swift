@@ -11,7 +11,7 @@ final class PokemonListViewController: UIViewController {
     
     private let viewModel: PokemonListViewModel
     
-    private var pokemons: [Pokemon] = []
+    private var pokemons: [PokemonDetail] = []
     private var isFetching = false
     private let pageSize = 20
     
@@ -31,8 +31,7 @@ final class PokemonListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-        //setupButton()
+
         tableview.delegate = self
         tableview
             .register(
@@ -55,7 +54,6 @@ final class PokemonListViewController: UIViewController {
         self.isFetching = false
     }
     
-    
     private func fetchPokemons() {
         Task {
             await viewModel.fetchPokemons(offset: 0, limit: pageSize)
@@ -70,10 +68,10 @@ extension PokemonListViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonCell", for: indexPath) as! PokemonCell
-        cell.pokemonLbl.text = pokemons[indexPath.row].name
-        cell.pokemonImage.image = UIImage(systemName: "chevron.right")
-        cell.pokemonCellView.backgroundColor = .clear
-        cell.pokemonCellStack.backgroundColor = .clear
+        cell
+            .configure(
+                with: pokemons[indexPath.row]
+            )
         return cell
     }
     

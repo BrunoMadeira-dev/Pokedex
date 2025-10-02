@@ -25,4 +25,28 @@ class PokemonRepositoryImpl: PokemonRepository {
         )
         return response.results
     }
+    
+    func getPokemonListWithDetails(offset: Int, limit: Int) async throws -> [PokemonDetail] {
+        let list = try await getPokemonList(offset: offset, limit: limit)
+        
+        return try await withThrowingTaskGroup(of: PokemonDetail.self) { group in
+            var details: [PokemonDetail] = []
+            
+            for pokemon in list {
+                group.addTask {
+                    let detailUrl = "https://pokeapi.co/api/v2/pokemon/\(pokemon.name)"
+                    return try await self.apiClient.responseCall(
+                        url: detailUrl,
+                        responseType: PokemonDetail.self
+                    )
+                }
+            }
+            
+            for try await detail in group {
+                details.append(detail)
+            }
+            
+            return details.sorted { $0.id < $1.id }
+        }
+    }
 }
