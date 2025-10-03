@@ -26,6 +26,7 @@ class PokemonDetail: Codable {
     let sprites: PokemonSprites
     let stats: [PokemonStat]
     let types: [PokemonType]
+    let moves: [PokemonMoves]
 }
 
 class PokemonSprites: Codable {
@@ -41,6 +42,15 @@ class PokemonType: Codable {
     let slot: Int
     let type: NamedAPIResource
 }
+
+class PokemonHeldItem: Codable {
+    let item: NamedAPIResource
+}
+
+class PokemonMoves: Codable {
+    let move: NamedAPIResource
+}
+
 
 class NamedAPIResource: Codable {
     let name: String

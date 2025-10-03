@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		54F79FBB2E8C8204003CF219 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 54F79FBA2E8C8204003CF219 /* Alamofire */; };
+		54F7A0212E8FBEA3003CF219 /* FavoritePokemon+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7A01F2E8FBEA3003CF219 /* FavoritePokemon+CoreDataClass.swift */; };
+		54F7A0222E8FBEA3003CF219 /* FavoritePokemon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F7A0202E8FBEA3003CF219 /* FavoritePokemon+CoreDataProperties.swift */; };
+		54F7A0262E8FC917003CF219 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 54F7A0252E8FC90E003CF219 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,9 @@
 
 /* Begin PBXFileReference section */
 		54EE06DE2E8AFC5B00BA548C /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54F7A01F2E8FBEA3003CF219 /* FavoritePokemon+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritePokemon+CoreDataClass.swift"; sourceTree = "<group>"; };
+		54F7A0202E8FBEA3003CF219 /* FavoritePokemon+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoritePokemon+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		54F7A0252E8FC90E003CF219 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -63,6 +69,9 @@
 		54EE06D52E8AFC5B00BA548C = {
 			isa = PBXGroup;
 			children = (
+				54F7A0252E8FC90E003CF219 /* README.md */,
+				54F7A01F2E8FBEA3003CF219 /* FavoritePokemon+CoreDataClass.swift */,
+				54F7A0202E8FBEA3003CF219 /* FavoritePokemon+CoreDataProperties.swift */,
 				54EE06E02E8AFC5B00BA548C /* Pokedex */,
 				54EE07602E8C7D1400BA548C /* Frameworks */,
 				54EE06DF2E8AFC5B00BA548C /* Products */,
@@ -153,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54F7A0262E8FC917003CF219 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +173,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54F7A0212E8FBEA3003CF219 /* FavoritePokemon+CoreDataClass.swift in Sources */,
+				54F7A0222E8FBEA3003CF219 /* FavoritePokemon+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@
                         <rect key="frame" x="29" y="8" width="335" height="70"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zgz-hV-tzu">
-                                <rect key="frame" x="10" y="10" width="315" height="50"/>
+                                <rect key="frame" x="10" y="10" width="260" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YouAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="jt3-MM-Qnt">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="36"/>
@@ -30,31 +30,40 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bC5-Os-mVE">
-                                        <rect key="frame" x="90" y="0.0" width="225" height="50"/>
+                                        <rect key="frame" x="90" y="0.0" width="170" height="50"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lw7-6X-TYe">
-                                                <rect key="frame" x="10" y="10" width="205" height="30"/>
+                                                <rect key="frame" x="0.0" y="10" width="170" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="lw7-6X-TYe" secondAttribute="bottom" constant="10" id="GCW-s2-TWj"/>
-                                            <constraint firstItem="lw7-6X-TYe" firstAttribute="top" secondItem="bC5-Os-mVE" secondAttribute="top" constant="10" id="Hlp-pB-adG"/>
-                                            <constraint firstItem="lw7-6X-TYe" firstAttribute="leading" secondItem="bC5-Os-mVE" secondAttribute="leading" constant="10" id="S7g-nt-cVJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="lw7-6X-TYe" secondAttribute="trailing" constant="10" id="yuQ-OB-LB0"/>
+                                            <constraint firstItem="lw7-6X-TYe" firstAttribute="leading" secondItem="bC5-Os-mVE" secondAttribute="leading" id="S7g-nt-cVJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="lw7-6X-TYe" secondAttribute="bottom" constant="10" id="WlN-sO-TWh"/>
+                                            <constraint firstItem="lw7-6X-TYe" firstAttribute="top" secondItem="bC5-Os-mVE" secondAttribute="top" constant="10" id="eF0-0h-a7O"/>
+                                            <constraint firstAttribute="trailing" secondItem="lw7-6X-TYe" secondAttribute="trailing" id="yuQ-OB-LB0"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oz3-HE-yfw">
+                                <rect key="frame" x="300" y="22.666666666666671" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Ivj-an-INZ"/>
+                                    <constraint firstAttribute="width" constant="25" id="OYA-xN-uAg"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zgz-hV-tzu" firstAttribute="leading" secondItem="T7P-62-y9S" secondAttribute="leading" constant="10" id="Hkg-sr-C8t"/>
                             <constraint firstItem="zgz-hV-tzu" firstAttribute="top" secondItem="T7P-62-y9S" secondAttribute="top" constant="10" id="MxG-zo-hn5"/>
                             <constraint firstAttribute="bottom" secondItem="zgz-hV-tzu" secondAttribute="bottom" constant="10" id="Wqy-on-hDO"/>
-                            <constraint firstAttribute="trailing" secondItem="zgz-hV-tzu" secondAttribute="trailing" constant="10" id="pPw-x7-2qr"/>
+                            <constraint firstItem="Oz3-HE-yfw" firstAttribute="leading" secondItem="zgz-hV-tzu" secondAttribute="trailing" constant="30" id="anG-hI-pae"/>
+                            <constraint firstItem="Oz3-HE-yfw" firstAttribute="centerY" secondItem="T7P-62-y9S" secondAttribute="centerY" id="c41-93-Piu"/>
+                            <constraint firstAttribute="trailing" secondItem="Oz3-HE-yfw" secondAttribute="trailing" constant="10" id="vkp-ch-qfA"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -66,6 +75,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="favoriteImg" destination="Oz3-HE-yfw" id="Wvp-Ia-D97"/>
                 <outlet property="pokemonCellStack" destination="zgz-hV-tzu" id="Z2N-yc-zRw"/>
                 <outlet property="pokemonCellView" destination="T7P-62-y9S" id="faM-u9-DEF"/>
                 <outlet property="pokemonImage" destination="jt3-MM-Qnt" id="Q3W-SR-VvS"/>

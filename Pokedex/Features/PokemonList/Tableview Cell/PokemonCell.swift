@@ -14,9 +14,12 @@ class PokemonCell: UITableViewCell {
     @IBOutlet weak var pokemonLbl: UILabel!
     @IBOutlet weak var pokemonCellView: UIView!
     @IBOutlet weak var pokemonCellStack: UIStackView!
+    @IBOutlet weak var favoriteImg: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        pokemonCellStack.backgroundColor = UIColor.clear
+        pokemonCellView.backgroundColor = UIColor.clear
     }
     
     func configure(with pokemon: PokemonDetail) {

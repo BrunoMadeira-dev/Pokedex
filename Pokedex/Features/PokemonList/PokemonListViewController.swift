@@ -47,6 +47,10 @@ final class PokemonListViewController: UIViewController {
         tableview.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableview.reloadData()
+    }
+    
     func inject(viewModel: PokemonListViewModel) {
         self.viewModel = viewModel
     }
@@ -80,6 +84,11 @@ extension PokemonListViewController: UITableViewDataSource, UITableViewDelegate 
             .configure(
                 with: pokemons[indexPath.row]
             )
+        let pokemon = pokemons[indexPath.row]
+        cell.favoriteImg.image = FavoritePokemonManager.shared
+            .isFavorite(pokemonId: pokemon.id) ?
+        UIImage(systemName: "heart.fill") :
+        UIImage(systemName: "heart")
         return cell
     }
     
