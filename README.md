@@ -22,4 +22,19 @@ Pequeno projeto onde se aplica a arquitetura MVVMC, consumo de API, favoritagem 
 - PokeAPI
 - JSON Parsing
 
+## Pré-requisitos
+- Xcode 15.0 ou superior
+- iOS 16.0 ou superior
+- Swift 5+
+- Dependências: Alamofire (via SPM)
+
+## Instalação de Dependências
+
+### Swift Package Manager
+1. Abra o projeto no Xcode
+2. Vá a File > Add Packages
+3. Insira `https://github.com/Alamofire/Alamofire.git`
+4. Selecione a versão compatível
+
+
 
